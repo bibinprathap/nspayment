@@ -1,0 +1,42 @@
+<form (ngSubmit)="submitForm()" [formGroup]="contactForm" novalidate>
+  <div class="form-content">
+    <label>
+      Account:
+      <input type="text" formControlName="account" class="sd-form-control" placeholder="Enter your Account.">
+    </label>
+    <label>
+      Name:
+      <input type="text" formControlName="name" class="sd-form-control" placeholder="Enter your Name.">
+    </label>
+
+    <label>
+      Amount:
+      <input type="text" formControlName="amount" class="sd-form-control" placeholder="Enter your Amount.">
+    </label>
+
+    <label>
+      Country:
+      <select  formControlName="country" class="sd-form-control" placeholder="Select Country">
+        <option value="volvo">India</option>
+        <option value="saab">China</option>
+        <option value="mercedes">USA</option>
+      </select>
+    </label>
+    <div class="form-submit">
+      <button type="submit">pay</button>
+    </div>
+  </div>
+</form>
+<div class="form-value">
+  Form value:
+  <pre>
+    {{contactForm.value | json}}
+  </pre>
+  <p>
+    Status: {{contactForm.status}}
+  </p>
+  <p>
+    Valid: {{contactForm.valid}}
+  </p>
+</div>
+
